@@ -30,9 +30,9 @@ public:
     void checkKills(point);
     void update();
     void checkTimeouts();
-    int getLives() const;
-    int getScore() const;
-    
+    int getLives();
+    int getScore();
+
     void drawScoreboard();
     void drawLivesBoard();
 };
