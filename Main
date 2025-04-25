@@ -19,13 +19,12 @@ int WinMain(int argc, char ** argv)
 		game.tryAddMole();
 	screen.update();
 	for(int i = 0; i < 1000; i++){
-		for(int j = 801; j <1000; j++){
+		for(int j = 901; j <1000; j++){
 			screen.plotPixel(i, j, 0, 0, 0);
 		}
 	}
     while (!screen.getQuit() && game.getLives() > 0)
     {
-
 		if(screen.mouseClick()){
 			pointClicked = screen.getMouseClick();
 			game.checkKills(pointClicked);
@@ -40,6 +39,8 @@ int WinMain(int argc, char ** argv)
 		else{
 			spawnCount += random(1, 10);
 		}
+		game.drawScoreboard();
+		game.drawLivesBoard();
 		screen.update();
 		screen.Sleep(timeInterval);
 
