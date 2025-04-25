@@ -9,7 +9,6 @@
 
 
 #include "CatTracker.h"
-#include <sstream>
 
 CatTracker::CatTracker(SDL_Plotter& screenIn) :
 screen(screenIn), score(0), lives(3) {}
@@ -54,16 +53,16 @@ void CatTracker::checkTimeouts(){
     }
 }
 
-int CatTracker::getLives(){
+int CatTracker::getLives() const{
     return lives;
 }
 
-int CatTracker::getScore(){
+int CatTracker::getScore() const{
     return score;
 }
 
 
-void CatTracker::drawScoreboard() {
+void CatTracker::drawScoreboard() const{
     for (int i = 0; i < score/100; i++) {
         for (int x = 0; x < 8; x++) {
             for (int y = 0; y < 10; y++) {
@@ -73,7 +72,7 @@ void CatTracker::drawScoreboard() {
     }
 }
 
-void CatTracker::drawLivesBoard() {
+void CatTracker::drawLivesBoard() const{
 	for(int i = 0; i < 1000; i++){
 		for(int j = 851; j < 900; j++){
 			screen.plotPixel(i,j,255,255,255);
