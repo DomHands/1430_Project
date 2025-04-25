@@ -7,12 +7,6 @@
 * Date Last Modified: 4/22/2025
 */
 
-//
-//  CatTracker.cpp
-//  Final Project
-//
-//  Created by Markas Flanagan on 4/25/25.
-//
 
 #include "CatTracker.h"
 #include <sstream>
@@ -51,7 +45,7 @@ void CatTracker::update(){
 }
 
 void CatTracker::checkTimeouts(){
-    for(int i = 0; i < cats.size(); i++){
+    for(unsigned int i = 0; i < cats.size(); i++){
         if(cats.at(i).isTimedOut()){
             cats.at(i).kill(screen);
             cats.erase(cats.begin() + i--);
@@ -60,11 +54,11 @@ void CatTracker::checkTimeouts(){
     }
 }
 
-int CatTracker::getLives() const{
+int CatTracker::getLives(){
     return lives;
 }
 
-int CatTracker::getScore() const{
+int CatTracker::getScore(){
     return score;
 }
 
@@ -80,20 +74,19 @@ void CatTracker::drawScoreboard() {
 }
 
 void CatTracker::drawLivesBoard() {
+	for(int i = 0; i < 1000; i++){
+		for(int j = 851; j < 900; j++){
+			screen.plotPixel(i,j,255,255,255);
+		}
+	}
+
+
     for (int i = 0; i < lives; i++) {
         for (int x = 0; x < 15; x++) {
             for (int y = 0; y < 15; y++) {
-                screen.plotPixel(10 + i * 25 + x, 860 + y, 255, 0, 0); 
+                screen.plotPixel(10 + i * 25 + x, 860 + y, 255, 0, 0);
             }
         }
     }
 }
-
-
-int CatTracker::getScore() const{
-	return score;
-}
-
-
-
 
