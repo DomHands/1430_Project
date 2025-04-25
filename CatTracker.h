@@ -7,12 +7,6 @@
 * Date Last Modified: 4/22/2025
 */
 
-//
-//  CatTracker.h
-//  Final Project
-//
-//  Created by Markas Flanagan on 4/25/25.
-//
 
 #ifndef CATTRACKER_H_
 #define CATTRACKER_H_
@@ -30,11 +24,11 @@ public:
     void checkKills(point);
     void update();
     void checkTimeouts();
-    int getLives();
-    int getScore();
+    int getLives() const;
+    int getScore() const;
 
-    void drawScoreboard();
-    void drawLivesBoard();
+    void drawScoreboard() const;
+    void drawLivesBoard() const;
 };
 
 
