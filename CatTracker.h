@@ -22,6 +22,7 @@ public:
     CatTracker(SDL_Plotter&);
     void tryAddMole();
     void checkKills(point);
+    void bomb();
     void update();
     void checkTimeouts();
     int getLives() const;
