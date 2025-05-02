@@ -7,13 +7,10 @@ int WinMain(int argc, char ** argv)
 {
     SDL_Plotter screen(900,1000);
     point pointClicked;
-    //color c;
     int spawnFrequency = 200;
     int spawnCount = 0;
     int timeInterval = 100;
     srand(time(0));
-    //int size;
-    //Uint32 RGB;
 	CatTracker game(screen);
 	for(int i = 0; i < 5; i++)
 		game.tryAddMole();
@@ -25,6 +22,11 @@ int WinMain(int argc, char ** argv)
 	}
     while (!screen.getQuit() && game.getLives() > 0)
     {
+    	if(screen.kbhit()){
+    		if(toupper(screen.getKey()) == 'B'){
+    			game.bomb();
+    		}
+    	}
 		if(screen.mouseClick()){
 			pointClicked = screen.getMouseClick();
 			game.checkKills(pointClicked);
