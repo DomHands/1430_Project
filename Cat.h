@@ -10,6 +10,7 @@
 #ifndef CAT_H_
 #define CAT_H_
 #include "SDL_Plotter.h"
+#include "CatPicture.h"
 #include <cmath>
 double distance(point p1, double x, double y);
 double distance(point p1, point p2);
