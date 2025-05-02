@@ -89,3 +89,11 @@ void CatTracker::drawLivesBoard() const{
     }
 }
 
+void CatTracker::bomb(){
+	for(Cat& currCat : cats){
+		score += currCat.kill(screen);
+	}
+	cats.clear();
+	lives--;
+}
+
