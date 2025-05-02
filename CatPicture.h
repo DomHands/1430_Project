@@ -1,3 +1,5 @@
+#ifndef CAT_PICTURE_H
+#define CAT_PICTURE_H
 #include "SDL_Plotter.h"
 
 
@@ -7,3 +9,4 @@ void drawEye(point center, int radius, SDL_Plotter& g);
 void drawLine(point p1, point p2, color c, SDL_Plotter& g);
 void drawCat(point center, int size, color fur, color eyeColor, color noseColor,
              color whiskerColor, color mouthColor, color tongueColor, SDL_Plotter& g);
+#endif
