@@ -23,6 +23,13 @@ private:
 	static const int roamingDistance = 100;
 	static const int lifeSpan = 50;
 	static const int speed = 3;
+
+	color furColor;
+    	color eyeColor;
+   	color noseColor;
+    	color whiskerColor;
+   	color mouthColor;
+    	color tongueColor;
 public:
 	Cat(point = point(500, 500));
 
